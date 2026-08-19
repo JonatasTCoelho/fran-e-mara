@@ -786,7 +786,7 @@ function App() {
                 © 2026 Vendas Conectadas. Todos os direitos reservados.
               </p>
               <p className="text-white/30 font-body-md text-xs tracking-wider">
-                Desenvolvido por <span className="text-vc-gold font-bold">Atherium Code</span>
+                Desenvolvido por <a href="https://atheriumcode.com.br" target="_blank" rel="noopener noreferrer" className="text-[#a855f7] hover:text-purple-300 font-bold transition-colors hover:underline">Atherium Code</a>
               </p>
             </div>
           </footer>
