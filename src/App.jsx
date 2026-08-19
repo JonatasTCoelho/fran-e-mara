@@ -781,9 +781,14 @@ function App() {
               <a className="text-white/50 hover:text-white transition-all font-body-md text-body-md" href="https://www.instagram.com/fran.gestora/" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a className="text-white/50 hover:text-white transition-all font-body-md text-body-md" href="https://wa.me/5519999701829?text=Oi!%20Estou%20na%20página%20do%20Vendas%20Conectadas%20e%20tenho%20uma%20dúvida." target="_blank" rel="noopener noreferrer">Suporte</a>
             </nav>
-            <p className="text-white/40 font-body-md text-body-md text-center">
-              © 2026 Vendas Conectadas. Todos os direitos reservados.
-            </p>
+            <div className="flex flex-col items-center gap-2 text-center">
+              <p className="text-white/40 font-body-md text-sm md:text-body-md">
+                © 2026 Vendas Conectadas. Todos os direitos reservados.
+              </p>
+              <p className="text-white/30 font-body-md text-xs tracking-wider">
+                Desenvolvido por <span className="text-vc-gold font-bold">Atherium Code</span>
+              </p>
+            </div>
           </footer>
           </div>
         )}
