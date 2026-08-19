@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER - The Future of Intelligence is Clear</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#703700",
+                        "outline-variant": "#464554",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#34343d",
+                        "surface-dim": "#13131b",
+                        "secondary": "#d0bcff",
+                        "outline": "#908fa0",
+                        "error-container": "#93000a",
+                        "surface": "#13131b",
+                        "secondary-container": "#571bc1",
+                        "on-primary": "#1000a9",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-tint": "#c0c1ff",
+                        "on-primary-fixed": "#07006c",
+                        "on-background": "#e4e1ed",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#303038",
+                        "inverse-primary": "#494bd6",
+                        "on-tertiary": "#4f2500",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-surface-variant": "#c7c4d7",
+                        "tertiary-fixed": "#ffdcc5",
+                        "tertiary-container": "#d97721",
+                        "on-secondary-container": "#c4abff",
+                        "on-surface": "#e4e1ed",
+                        "inverse-surface": "#e4e1ed",
+                        "tertiary": "#ffb783",
+                        "primary-container": "#8083ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "on-primary-container": "#0d0096",
+                        "on-secondary-fixed": "#23005c",
+                        "on-tertiary-container": "#452000",
+                        "background": "#13131b",
+                        "surface-container-highest": "#34343d",
+                        "primary": "#c0c1ff",
+                        "surface-container": "#1f1f27",
+                        "surface-bright": "#393841",
+                        "secondary-fixed": "#e9ddff",
+                        "primary-fixed": "#e1e0ff",
+                        "on-secondary": "#3c0091",
+                        "surface-container-high": "#292932",
+                        "surface-container-lowest": "#0d0d15",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-tertiary-fixed": "#301400",
+                        "surface-container-low": "#1b1b23"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-sm": "80px",
+                        "container-max": "1280px",
+                        "section-gap-lg": "160px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "stack-gap": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["20px", { "lineHeight": "1.75", "fontWeight": "400" }],
+                        "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-xl-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "700" }],
+                        "headline-md": ["30px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 40px 80px -10px rgba(87, 27, 193, 0.15); /* secondary-container tint */
+        }
+        
+        .glass-button {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .glass-button:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .primary-gradient-btn {
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.secondary-container'));
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .primary-gradient-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(192, 193, 255, 0.4);
+        }
+
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Ambient Glow Backgrounds -->
+<div class="ambient-glow bg-secondary-container w-[600px] h-[600px] top-[-100px] left-[-200px]"></div>
+<div class="ambient-glow bg-primary w-[500px] h-[500px] top-[40%] right-[-150px] opacity-20"></div>
+<div class="ambient-glow bg-secondary-container w-[800px] h-[800px] bottom-[-200px] left-[20%] opacity-30"></div>
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 dark:bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-indigo-500/10 backdrop-blur-md">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+<!-- Brand -->
+<a class="font-display-xl text-display-xl-mobile tracking-tighter text-on-surface dark:text-on-surface hover:scale-105 transition-transform duration-300" href="#">
+                AETHER
+            </a>
+<!-- Desktop Navigation Links (Hidden on Mobile, relying on TopAppBar constraints here but adding standard responsive hide) -->
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 duration-300" href="#features">Features</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 duration-300" href="#case-studies">Case Studies</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 duration-300" href="#solutions">Solutions</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 duration-300" href="#pricing">Pricing</a>
+</div>
+<!-- Trailing Primary Action -->
+<div class="flex items-center">
+<button class="primary-gradient-btn px-6 py-2 rounded-full font-label-md text-label-md text-on-primary-fixed hover:scale-105 transition-transform duration-300 shadow-lg">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-[120px] pb-section-gap-sm md:pb-section-gap-lg">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex flex-col items-center justify-center min-h-[819px] text-center relative z-10">
+<div class="inline-flex items-center space-x-2 bg-surface-container-highest/50 backdrop-blur-md rounded-full px-4 py-1.5 mb-8 border border-white/5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary">Aether OS 2.0 Lançado</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-6 max-w-4xl mx-auto leading-tight">
+                The Future of Intelligence is Clear
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                Integração de IA perfeitamente transparente. Transforme a complexidade de dados brutos em clareza acionável através do nosso ecossistema de processamento neural imersivo.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+<button class="primary-gradient-btn w-full sm:w-auto px-8 py-4 rounded-full font-label-md text-label-md text-on-primary-fixed flex items-center justify-center gap-2">
+                    Start Free Trial
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+<button class="glass-button w-full sm:w-auto px-8 py-4 rounded-full font-label-md text-label-md text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+                    Watch Demo
+                </button>
+</div>
+<!-- Abstract Hero Visual Placeholder -->
+<div class="w-full max-w-5xl mx-auto mt-20 relative h-[400px] md:h-[600px] rounded-[2rem] overflow-hidden glass-panel flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/90 z-10"></div>
+<img alt="Abstract Glassmorphism Visual" class="absolute inset-0 w-full h-full object-cover z-0 opacity-80 mix-blend-screen" data-alt="A highly detailed 3D abstract composition featuring translucent, glass-like geometric shapes floating in a dark, infinite void space. The objects are illuminated by a soft, ethereal violet and indigo bioluminescent glow, reflecting light off their crystalline surfaces. The mood is futuristic, serene, and highly sophisticated, perfectly embodying high-end modern tech aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOJSXwBPAS5BNN7ahgiiW4LVQx7TDt_zka2ho8Sdwn2nrdzJKVMyKuzD_QPgyILDEqdvTZ5I1hvq7RSRd99-Z0aTa6_YaoAPd4utr5E1RCSWQ6-XkApF39HyDBMbO4acF4bhWOyM1ZnnsmRpVqJyYLbe58tpyP8NenAAyBO9lIqjJg7H8mMAQVtC_WmIbjsN5hFPRJyLiJGfiQAPLRjCiKrDnFx3o8TWyCxoQCAjE_CxwEOpbbYLB79PpWuHcBDdkl8EX2WVOa9Ug"/>
+</div>
+</section>
+<!-- Features Section (Bento Grid Style) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap-sm md:py-section-gap-lg relative z-10" id="features">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Arquitetura de Próxima Geração</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Construído para escalar, projetado para precisão.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-gap">
+<!-- Feature 1 -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col items-start group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container" style="font-size: 24px;">memory</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Neural Processing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Análise em tempo real alimentada por redes neurais quânticas, oferecendo velocidade sem precedentes.</p>
+</div>
+<!-- Feature 2 -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col items-start group hover:-translate-y-2 transition-transform duration-300 md:-translate-y-8">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container" style="font-size: 24px;">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Adaptive Learning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Modelos que evoluem autonomamente baseados em padrões de uso contínuos e contextos dinâmicos.</p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col items-start group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container" style="font-size: 24px;">security</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Secure Scaling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Arquitetura de fragmentação criptográfica garante que o crescimento massivo nunca comprometa a integridade.</p>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap-sm md:py-section-gap-lg relative z-10" id="case-studies">
+<div class="mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Confiança Estabelecida</h2>
+<div class="h-1 w-20 bg-primary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-gap">
+<!-- Testimonial 1 -->
+<div class="glass-panel p-8 rounded-2xl relative">
+<span class="material-symbols-outlined absolute top-8 right-8 text-surface-bright" style="font-size: 48px; opacity: 0.5;">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10">
+                        "A integração do AETHER revolucionou nossa análise preditiva. O que antes levava semanas de processamento em lote, agora é insights em tempo real."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Elena Rodriguez" class="w-full h-full object-cover" data-alt="A professional headshot of a confident tech executive in her 40s, lit by dramatic rim lighting against a dark studio background. She wears a minimalist dark blazer. High contrast, sharp focus, corporate premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_HeXiUkQ5DqgNDYDsAw0Ve1Ai3rwM1x_Bm8Xu_Pk6SgJ2kgEo_CHE-OD7JIG3OEhmCC624TNSrscehix-MZzV_FanrUce65vrKeFvK5mr7BOn04_rwf2zWqiZFNfMjU1HhN8udJwx7NpwRIHiFGTCt7rQkBCfjstcbKPvWO87tw9d5IlHrVPrVuqBuLiJrrHwMTLIM5xEeY1JBN1I4G3w0TjCFRkJ1X1r1d0Sd43y-eGVC2aHX8XHtlTYw1YePsX0PNkTtZGuaE"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Elena Rodriguez</h4>
+<p class="text-sm text-outline">CTO, Nexus Corp</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-panel p-8 rounded-2xl relative">
+<span class="material-symbols-outlined absolute top-8 right-8 text-surface-bright" style="font-size: 48px; opacity: 0.5;">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10">
+                        "A clareza da interface esconde um motor incrivelmente complexo e poderoso. É a primeira ferramenta de IA que nossa equipe adotou sem atrito."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Marcus Chen" class="w-full h-full object-cover" data-alt="A professional headshot of a creative director in his 30s with glasses and a neat beard. Cinematic studio lighting with a subtle cool blue fill light. Dark background. Premium, modern, intellectual aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIaZfekv6SUMw7iqxgOUxjEkGRBc5UxoYdWgDZUvbhWly2Fwhn7kBcIw21j2uH09MpQuieRK4qPjGvSzSHPY7GWdQlhCGvg4NwNxPrn6dt2xFArBk5_hcpLijkw0HN41JDOiaatXHd57P0Zhcz9EH-2aiNlYThYArZwJfwCv85_Ti1pYqJSS_AACLr81et085cOGNSZUACNcq2byr5HXUgg-a8Zld9PIA5F2C_dVp735utH8_H5ZB6jymy0s4cjvgmhi3rR60q6VE"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Marcus Chen</h4>
+<p class="text-sm text-outline">Diretor de Dados, Synthetica</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-panel p-8 rounded-2xl relative md:col-span-2 lg:col-span-1">
+<span class="material-symbols-outlined absolute top-8 right-8 text-surface-bright" style="font-size: 48px; opacity: 0.5;">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10">
+                        "Escalabilidade segura não é apenas um jargão para a AETHER. Triplicamos nosso volume de dados nos últimos seis meses sem um único gargalo de performance."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="David Thorne" class="w-full h-full object-cover" data-alt="A professional headshot of a mature male CEO in his 50s. Clean-shaven, wearing a high-end dark turtleneck. The lighting is sophisticated, creating deep shadows that emphasize wisdom and authority. High resolution, premium corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8w_c4hZgwB7smqTlHNS_l5C1TWHBWpzlkN6FeSF-lhRfjJbc1EumVUDGyhXrbsad3QM6yrQ-KJt60vNXNeKAtSb0KFvaPRoABIoqcrxqtzu01ADQ8u-DgTi5P44p6LwdzIJYU98OAedP5rkTtGAjja-mk9tV-2MdMgFgtngXhgHdVqSqUWODXF4sBreT1waz96geipBfci77s1-c9wQ_GGtJ8mWhObC6fjxWoSQs-UwxCxhR7HGmZCzo8xDOcsm1oUMjwN8OPQqs"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">David Thorne</h4>
+<p class="text-sm text-outline">Fundador, OmniSystems</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap-sm md:py-section-gap-lg relative z-10">
+<div class="glass-panel rounded-[2rem] overflow-hidden relative flex flex-col items-center justify-center py-20 px-8 text-center bg-gradient-to-br from-surface-container to-surface/40">
+<!-- Inner glow effect for CTA -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary-container/10 mix-blend-overlay"></div>
+<h2 class="font-display-xl-mobile md:font-display-xl-mobile text-display-xl-mobile md:text-display-xl-mobile text-on-surface mb-6 relative z-10">
+                    Junte-se à Revolução Cognitiva
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 relative z-10">
+                    Experimente o poder da inteligência cristalina. Comece seu teste gratuito hoje e redefina o que é possível.
+                </p>
+<button class="primary-gradient-btn px-10 py-5 rounded-full font-label-md text-label-md text-on-primary-fixed text-lg flex items-center justify-center gap-2 relative z-10 shadow-[0_0_40px_rgba(192,193,255,0.3)]">
+                    Iniciar Acesso Antecipado
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-section-gap-sm bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/5 transition-all ease-in-out relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter gap-stack-gap">
+<!-- Brand Logo -->
+<div class="font-headline-md text-headline-md text-on-surface">
+                AETHER
+            </div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Cookie Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Security</a>
+</div>
+<!-- Copyright -->
+<div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 Aether Dynamics. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

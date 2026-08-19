@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendas Conectadas - Máquina de Vendas</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-background": "#e2e2e2",
+              "inverse-surface": "#e2e2e2",
+              "surface-container-lowest": "#0c0f0f",
+              "on-error": "#690005",
+              "surface-dim": "#121414",
+              "surface-variant": "#333535",
+              "primary-container": "#000000",
+              "on-tertiary-container": "#cf00cf",
+              "background": "#000000",
+              "surface-tint": "#c6c6c6",
+              "on-tertiary": "#5b005b",
+              "secondary-fixed": "#ffe088",
+              "on-tertiary-fixed": "#380038",
+              "on-primary-container": "#757575",
+              "surface": "#121414",
+              "tertiary-container": "#000000",
+              "surface-container-high": "#282a2b",
+              "tertiary-fixed-dim": "#ffabf3",
+              "on-secondary-container": "#342800",
+              "error-container": "#93000a",
+              "tertiary": "#ffabf3",
+              "secondary-container": "#af8d11",
+              "secondary-fixed-dim": "#e9c349",
+              "on-surface-variant": "#cfc4c5",
+              "outline-variant": "#4c4546",
+              "tertiary-fixed": "#ffd7f5",
+              "surface-container": "#1e2020",
+              "surface-bright": "#37393a",
+              "primary-fixed": "#e2e2e2",
+              "secondary": "#e9c349",
+              "outline": "#988e90",
+              "on-primary-fixed-variant": "#474747",
+              "on-secondary-fixed": "#241a00",
+              "surface-container-highest": "#333535",
+              "on-error-container": "#ffdad6",
+              "on-secondary": "#3c2f00",
+              "primary": "#c6c6c6",
+              "inverse-on-surface": "#2f3131",
+              "inverse-primary": "#5e5e5e",
+              "on-primary": "#303030",
+              "surface-container-low": "#1a1c1c",
+              "error": "#ffb4ab",
+              "primary-fixed-dim": "#c6c6c6",
+              "on-primary-fixed": "#1b1b1b",
+              "on-tertiary-fixed-variant": "#810081",
+              "on-surface": "#e2e2e2",
+              "on-secondary-fixed-variant": "#574500",
+              "vc-magenta": "#FF00FF",
+              "vc-magenta-hover": "#CC00CC",
+              "vc-gold": "#D4AF37",
+              "vc-black": "#000000",
+              "vc-dark-grey": "#0a0a0a"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+            "spacing": {
+              "section-gap-desktop": "160px",
+              "container-max-width": "1200px",
+              "gutter": "24px",
+              "base": "8px",
+              "section-gap-mobile": "100px"
+            },
+            "fontFamily": {
+              "display-lg": ["Hanken Grotesk", "sans-serif"],
+              "headline-md": ["Hanken Grotesk", "sans-serif"],
+              "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+              "headline-lg": ["Hanken Grotesk", "sans-serif"],
+              "label-caps": ["JetBrains Mono", "monospace"],
+              "display-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+              "body-lg": ["Inter", "sans-serif"],
+              "body-md": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+              "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+              "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+              "headline-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+              "headline-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+              "display-lg-mobile": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+              "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col font-body-md text-body-md selection:bg-vc-magenta selection:text-white bg-vc-black relative overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vendas Conectadas - Máquina de Vendas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e2e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-error": "#690005",
+                        "surface-dim": "#121414",
+                        "surface-variant": "#333535",
+                        "primary-container": "#000000",
+                        "on-tertiary-container": "#cf00cf",
+                        "background": "#000000",
+                        "surface-tint": "#c6c6c6",
+                        "on-tertiary": "#5b005b",
+                        "secondary-fixed": "#ffe088",
+                        "on-tertiary-fixed": "#380038",
+                        "on-primary-container": "#757575",
+                        "surface": "#121414",
+                        "tertiary-container": "#000000",
+                        "surface-container-high": "#282a2b",
+                        "tertiary-fixed-dim": "#ffabf3",
+                        "on-secondary-container": "#342800",
+                        "error-container": "#93000a",
+                        "tertiary": "#ffabf3",
+                        "secondary-container": "#af8d11",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#cfc4c5",
+                        "outline-variant": "#4c4546",
+                        "tertiary-fixed": "#ffd7f5",
+                        "surface-container": "#1e2020",
+                        "surface-bright": "#37393a",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary": "#e9c349",
+                        "outline": "#988e90",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container-highest": "#333535",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#3c2f00",
+                        "primary": "#c6c6c6",
+                        "inverse-on-surface": "#2f3131",
+                        "inverse-primary": "#5e5e5e",
+                        "on-primary": "#303030",
+                        "surface-container-low": "#1a1c1c",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-tertiary-fixed-variant": "#810081",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#574500",
+                        "vc-magenta": "#FF00FF",
+                        "vc-magenta-hover": "#CC00CC",
+                        "vc-gold": "#D4AF37",
+                        "vc-black": "#000000",
+                        "vc-dark-grey": "#0a0a0a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap-desktop": "160px",
+                        "container-max-width": "1200px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "section-gap-mobile": "100px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk", "sans-serif"],
+                        "headline-md": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                        "label-caps": ["JetBrains Mono", "monospace"],
+                        "display-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.vc-black');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+        .glow-magenta {
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
+        }
+        .glow-magenta-hover:hover {
+            box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .level-1-card {
+            background: linear-gradient(145deg, theme('colors.vc-dark-grey'), #111111);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .level-1-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .input-premium {
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        .input-premium:focus {
+            outline: none;
+            border-color: theme('colors.vc-gold');
+            background-color: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+        
+        /* Top Alert Animation */
+        @keyframes pulse-alert {
+            0%, 100% { background-color: theme('colors.vc-magenta'); }
+            50% { background-color: theme('colors.on-tertiary-container'); }
+        }
+        .alert-bar {
+            animation: pulse-alert 4s infinite ease-in-out;
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md selection:bg-vc-magenta selection:text-white bg-vc-black relative">
+<!-- 1. Top Alert Block -->
+<div class="alert-bar w-full py-3 px-gutter text-center z-[60] relative shadow-[0_4px_20px_rgba(255,0,255,0.2)]">
+<p class="font-label-caps text-label-caps text-white font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+            ⚠️ ÚLTIMA CHANCE: As inscrições com desconto encerram em breve!
+        </p>
+</div>
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 glass-nav border-b border-white/5 mt-[44px]">
+<div class="flex justify-between items-center px-gutter py-5 max-w-container-max-width mx-auto">
+<div class="font-display-lg text-headline-md font-bold text-white tracking-tighter">
+                Vendas Conectadas
+            </div>
+<nav class="hidden md:flex gap-10 items-center">
+<a class="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#metodo">O Método</a>
+<a class="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#resultados">Resultados</a>
+<a class="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#oferta">Oferta</a>
+<a class="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#faq">FAQ</a>
+</nav>
+<button class="hidden md:block bg-vc-magenta text-white font-label-caps text-label-caps py-3 px-8 rounded-sm hover:bg-vc-magenta-hover transition-all duration-300 glow-magenta font-bold cursor-pointer active:scale-95 uppercase tracking-wider">
+                Matricular Agora
+            </button>
+<button aria-label="Menu" class="md:hidden text-white/70 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-32">
+<!-- 2. Hero Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max-width mx-auto flex flex-col items-center text-center relative mt-8">
+<!-- Decorative Grid & Glow -->
+<div class="absolute inset-0 bg-grid pointer-events-none opacity-50 z-0"></div>
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-vc-magenta/15 blur-[120px] rounded-full pointer-events-none z-0"></div>
+<div class="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-vc-gold/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
+<div class="relative z-10 inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-vc-magenta/40 bg-vc-magenta/5 backdrop-blur-sm mb-10 shadow-[0_0_15px_rgba(255,0,255,0.1)]">
+<span class="w-2.5 h-2.5 rounded-full bg-vc-magenta animate-pulse shadow-[0_0_10px_#FF00FF]"></span>
+<span class="font-label-caps text-label-caps text-vc-magenta tracking-widest font-bold">MÉTODO VALIDADO</span>
+</div>
+<h1 class="relative z-10 font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-8 max-w-[1000px] leading-[1.1]">
+                Pare de "Jogar Dinheiro Fora" no Instagram: Transforme o Botão Impulsionar em uma <span class="text-transparent bg-clip-text bg-gradient-to-r from-vc-gold via-[#FFF8D6] to-vc-gold drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]">Máquina de Vendas Reais</span>.
+            </h1>
+<p class="relative z-10 font-body-lg text-body-lg text-white/70 mb-16 max-w-3xl leading-relaxed">
+                O método prático para empreendedoras que desejam vender todos os dias usando anúncios estratégicos, sem precisar ser uma especialista em tecnologia.
+            </p>
+<!-- VSL Placeholder -->
+<div class="relative z-10 w-full max-w-5xl aspect-video bg-[#0a0a0a] border border-white/10 rounded-2xl mb-16 flex items-center justify-center group cursor-pointer overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_40px_rgba(212,175,55,0.1)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_60px_rgba(255,0,255,0.15)] hover:border-vc-magenta/30">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
+<div class="z-20 w-24 h-24 bg-vc-magenta/90 backdrop-blur-sm rounded-full flex items-center justify-center glow-magenta group-hover:scale-110 group-hover:bg-vc-magenta transition-all duration-500 border border-white/20">
+<span class="material-symbols-outlined text-white text-5xl ml-2 drop-shadow-md">play_arrow</span>
+</div>
+<div class="absolute bottom-6 left-6 z-20 font-label-caps text-label-caps text-white/90 flex items-center gap-3 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-vc-gold animate-pulse">volume_up</span> Clique para ouvir
+                </div>
+</div>
+<button class="relative z-10 w-full md:w-auto bg-vc-magenta text-white font-headline-lg-mobile md:font-headline-md text-[24px] md:text-[28px] py-6 px-14 rounded-lg transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_30px_rgba(255,0,255,0.3)] hover:-translate-y-1 uppercase tracking-wide">
+                QUERO VENDER MAIS AGORA
+            </button>
+<div class="relative z-10 mt-6 flex items-center justify-center gap-8 opacity-60">
+<span class="flex items-center gap-2 font-label-caps text-[13px] tracking-wider"><span class="material-symbols-outlined text-[18px]">lock</span> PAGAMENTO SEGURO</span>
+<span class="flex items-center gap-2 font-label-caps text-[13px] tracking-wider"><span class="material-symbols-outlined text-[18px]">update</span> ACESSO IMEDIATO</span>
+</div>
+</section>
+<!-- 3. Emotional Section (Pain) -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-[#050505] relative border-y border-white/5 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-vc-magenta/5 to-transparent pointer-events-none"></div>
+<div class="px-gutter max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/3 flex justify-center">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-black border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(255,0,255,0.1)] relative">
+<div class="absolute inset-0 rounded-full border border-vc-magenta/30 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+<span class="material-symbols-outlined text-vc-magenta text-7xl md:text-8xl opacity-90 drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]">trending_down</span>
+</div>
+</div>
+<div class="md:w-2/3 text-center md:text-left">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-6 leading-[1.2]">
+                            Você aperta o botão 'Impulsionar', vê as curtidas subirem, <span class="text-vc-magenta font-bold drop-shadow-[0_0_10px_rgba(255,0,255,0.3)]">mas o seu direct continua silencioso?</span>
+</h2>
+<p class="font-body-lg text-body-lg text-white/70 leading-relaxed border-l-4 border-vc-gold/50 pl-6">
+                            Gastar dinheiro com anúncios que não trazem retorno é frustrante. Você não precisa de mais seguidores, você precisa de clientes que compram.
+                        </p>
+</div>
+</div>
+</section>
+<!-- 4. Logic Section (Solution) -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max-width mx-auto relative" id="metodo">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-vc-gold/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+<div class="text-center mb-20 relative z-10">
+<span class="font-label-caps text-label-caps text-vc-gold mb-4 block tracking-widest uppercase">O que você vai descobrir</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6">
+                    A Solução Definitiva
+                </h2>
+<p class="font-body-lg text-body-lg text-white/70 max-w-2xl mx-auto">Dentro do Vendas Conectadas você vai aprender o passo a passo exato:</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+<!-- Bento Item 1 -->
+<div class="level-1-card p-10 rounded-2xl flex flex-col gap-6 lg:col-span-2 group">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-vc-gold/20 to-transparent flex items-center justify-center border border-vc-gold/30 group-hover:border-vc-gold transition-colors">
+<span class="material-symbols-outlined text-vc-gold text-3xl">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white leading-tight">Como estruturar suas redes sociais pra atrair clientes de alto valor</h3>
+</div>
+<!-- Bento Item 2 -->
+<div class="level-1-card p-10 rounded-2xl flex flex-col gap-6 group">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-vc-gold/20 to-transparent flex items-center justify-center border border-vc-gold/30 group-hover:border-vc-gold transition-colors">
+<span class="material-symbols-outlined text-vc-gold text-3xl">ads_click</span>
+</div>
+<h3 class="font-headline-md text-[28px] leading-tight text-white">Como usar anúncios e impulsionamento do jeito certo</h3>
+</div>
+<!-- Bento Item 3 -->
+<div class="level-1-card p-10 rounded-2xl flex flex-col gap-6 group">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-vc-gold/20 to-transparent flex items-center justify-center border border-vc-gold/30 group-hover:border-vc-gold transition-colors">
+<span class="material-symbols-outlined text-vc-gold text-3xl">swap_horiz</span>
+</div>
+<h3 class="font-headline-md text-[28px] leading-tight text-white">Como transformar simples seguidores em compradores fiéis</h3>
+</div>
+<!-- Bento Item 4 -->
+<div class="level-1-card p-10 rounded-2xl flex flex-col gap-6 group">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-vc-gold/20 to-transparent flex items-center justify-center border border-vc-gold/30 group-hover:border-vc-gold transition-colors">
+<span class="material-symbols-outlined text-vc-gold text-3xl">visibility_off</span>
+</div>
+<h3 class="font-headline-md text-[28px] leading-tight text-white">Como vender todos os dias sem precisar aparecer na câmera</h3>
+</div>
+<!-- Bento Item 5 -->
+<div class="level-1-card p-10 rounded-2xl flex flex-col gap-6 lg:col-span-1 group">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-vc-gold/20 to-transparent flex items-center justify-center border border-vc-gold/30 group-hover:border-vc-gold transition-colors">
+<span class="material-symbols-outlined text-vc-gold text-3xl">bolt</span>
+</div>
+<h3 class="font-headline-md text-[28px] leading-tight text-white">Estratégias simples, aplicáveis e que realmente funcionam na prática</h3>
+</div>
+</div>
+</section>
+<!-- 5. Relief Section -->
+<section class="py-32 px-gutter text-center border-y border-white/5 bg-[#050505] relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-vc-gold/10 via-black to-black opacity-60"></div>
+<div class="max-w-4xl mx-auto relative z-10">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-vc-gold/10 border border-vc-gold/30 mb-8">
+<span class="material-symbols-outlined text-vc-gold text-4xl">task_alt</span>
+</div>
+<p class="font-headline-lg-mobile md:font-headline-lg text-[32px] md:text-[44px] leading-snug text-white/90 font-light italic">
+                    "Tudo explicado de forma clara, real e feita pra você colocar em prática no mesmo dia. <span class="text-vc-gold font-bold not-italic">Nada complicado. Nada que te deixe perdida.</span>"
+                </p>
+</div>
+</section>
+<!-- 6. Authority/Social Proof -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max-width mx-auto relative" id="resultados">
+<div class="absolute top-1/2 left-0 w-[300px] h-[300px] bg-vc-magenta/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+<div class="text-center mb-20 relative z-10">
+<span class="font-label-caps text-label-caps text-vc-magenta mb-4 block tracking-widest uppercase">Casos de Sucesso</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6">
+                    Resultados Reais
+                </h2>
+<p class="font-body-lg text-body-lg text-white/70 max-w-2xl mx-auto">Elas aplicaram o método e transformaram seus negócios de forma consistente.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+<!-- Testimonial 1 -->
+<div class="level-1-card p-10 rounded-2xl relative border-t-4 border-t-vc-magenta/50 hover:border-t-vc-magenta transition-all duration-300">
+<span class="material-symbols-outlined text-vc-magenta absolute top-8 right-8 opacity-10 text-7xl font-light">format_quote</span>
+<div class="flex items-center gap-5 mb-8">
+<div class="w-16 h-16 bg-[#1a1a1a] rounded-full overflow-hidden border border-white/10 shadow-[0_0_15px_rgba(255,0,255,0.15)]">
+<!-- Placeholder avatar -->
+</div>
+<div>
+<p class="font-bold text-white text-xl">Mariana S.</p>
+<p class="text-vc-gold/80 text-[13px] font-label-caps tracking-wider mt-1">EMPREENDEDORA</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-white/80 italic leading-relaxed text-lg">
+                        "Aumentei minhas vendas em 3x na primeira semana só ajustando o botão impulsionar como ensinado no curso. Surreal!"
+                    </p>
+</div>
+<!-- Testimonial 2 -->
+<div class="level-1-card p-10 rounded-2xl relative border-t-4 border-t-vc-magenta/50 hover:border-t-vc-magenta transition-all duration-300">
+<span class="material-symbols-outlined text-vc-magenta absolute top-8 right-8 opacity-10 text-7xl font-light">format_quote</span>
+<div class="flex items-center gap-5 mb-8">
+<div class="w-16 h-16 bg-[#1a1a1a] rounded-full overflow-hidden border border-white/10 shadow-[0_0_15px_rgba(255,0,255,0.15)]">
+<!-- Placeholder avatar -->
+</div>
+<div>
+<p class="font-bold text-white text-xl">Camila R.</p>
+<p class="text-vc-gold/80 text-[13px] font-label-caps tracking-wider mt-1">ESTETICISTA</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-white/80 italic leading-relaxed text-lg">
+                        "Meu direct vivia vazio. Hoje tenho agenda lotada para as próximas 3 semanas gastando apenas R$ 10 por dia."
+                    </p>
+</div>
+<!-- Testimonial 3 -->
+<div class="level-1-card p-10 rounded-2xl relative border-t-4 border-t-vc-magenta/50 hover:border-t-vc-magenta transition-all duration-300">
+<span class="material-symbols-outlined text-vc-magenta absolute top-8 right-8 opacity-10 text-7xl font-light">format_quote</span>
+<div class="flex items-center gap-5 mb-8">
+<div class="w-16 h-16 bg-[#1a1a1a] rounded-full overflow-hidden border border-white/10 shadow-[0_0_15px_rgba(255,0,255,0.15)]">
+<!-- Placeholder avatar -->
+</div>
+<div>
+<p class="font-bold text-white text-xl">Juliana M.</p>
+<p class="text-vc-gold/80 text-[13px] font-label-caps tracking-wider mt-1">LOJISTA</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-white/80 italic leading-relaxed text-lg">
+                        "Sempre tive medo de aparecer. O método me ensinou a vender todos os dias sem precisar gravar um único story."
+                    </p>
+</div>
+</div>
+</section>
+<!-- 7. Rational Section (Offer/Guarantee) -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter relative" id="oferta">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-vc-magenta/5 via-black to-black opacity-80 pointer-events-none"></div>
+<div class="max-w-4xl mx-auto bg-black border border-white/10 rounded-[2rem] p-8 md:p-20 text-center relative overflow-hidden shadow-[0_30px_100px_rgba(255,0,255,0.15)] group">
+<!-- Glowing background effect -->
+<div class="absolute inset-0 bg-gradient-to-br from-vc-magenta/10 via-transparent to-vc-gold/5 pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="absolute -top-40 -right-40 w-80 h-80 bg-vc-magenta/20 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg-mobile md:font-display-lg text-[48px] md:text-[64px] text-white mb-2 leading-none">
+                        Acesso Completo
+                    </h2>
+<div class="my-12 relative">
+<div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+<div class="bg-black inline-block px-8 relative z-10">
+<p class="text-white/50 line-through text-2xl mb-4 font-light">De R$ 497</p>
+<p class="font-bold text-white/90 text-2xl mb-2 font-label-caps tracking-widest uppercase">por apenas</p>
+<div class="font-display-lg text-[72px] md:text-[96px] font-bold text-transparent bg-clip-text bg-gradient-to-b from-vc-gold to-[#b38f22] leading-none my-4 drop-shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                                    12x R$ 29,70
+                                </div>
+<p class="text-white/60 text-lg">ou R$ 297 à vista.</p>
+</div>
+</div>
+<button class="w-full md:w-[80%] mx-auto bg-vc-magenta text-white font-headline-md text-[24px] md:text-[28px] py-6 px-12 rounded-xl transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_40px_rgba(255,0,255,0.4)] mb-10 uppercase tracking-wide hover:-translate-y-1">
+                        QUERO GARANTIR MEU ACESSO
+                    </button>
+<!-- Guarantee Badge -->
+<div class="flex items-center justify-center gap-6 bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 inline-flex mx-auto w-full md:w-auto hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-vc-gold text-5xl">verified_user</span>
+<div class="text-left">
+<p class="font-bold text-white font-headline-md text-[22px] mb-1">Garantia Incondicional de 7 Dias.</p>
+<p class="text-white/70 font-body-md text-lg">Seu risco é absolutamente zero.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. FAQ -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-4xl mx-auto relative" id="faq">
+<div class="text-center mb-16 relative z-10">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6">
+                    Perguntas Frequentes
+                </h2>
+</div>
+<div class="space-y-6 relative z-10">
+<!-- FAQ Item 1 -->
+<details class="group bg-[#0a0a0a] rounded-xl border border-white/10 open:border-vc-gold/40 transition-colors duration-300 hover:border-white/20">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none p-8 text-white font-headline-md text-[22px]">
+<span class="flex items-center gap-4"><span class="w-2 h-2 bg-vc-gold rounded-full opacity-50 group-open:opacity-100 transition-opacity"></span> Serve para o meu nicho?</span>
+<span class="transition-transform duration-300 group-open:rotate-180 text-vc-gold/70 group-open:text-vc-gold">
+<span class="material-symbols-outlined text-3xl">expand_more</span>
+</span>
+</summary>
+<div class="text-white/70 mt-2 p-8 pt-0 font-body-lg text-body-lg pl-14 leading-relaxed border-t border-white/5 mt-4 pt-6">
+                        Sim, o método é 100% aplicável a qualquer negócio que venda produtos ou serviços, físicos ou digitais.
+                    </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group bg-[#0a0a0a] rounded-xl border border-white/10 open:border-vc-gold/40 transition-colors duration-300 hover:border-white/20">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none p-8 text-white font-headline-md text-[22px]">
+<span class="flex items-center gap-4"><span class="w-2 h-2 bg-vc-gold rounded-full opacity-50 group-open:opacity-100 transition-opacity"></span> Preciso aparecer nos vídeos?</span>
+<span class="transition-transform duration-300 group-open:rotate-180 text-vc-gold/70 group-open:text-vc-gold">
+<span class="material-symbols-outlined text-3xl">expand_more</span>
+</span>
+</summary>
+<div class="text-white/70 mt-2 p-8 pt-0 font-body-lg text-body-lg pl-14 leading-relaxed border-t border-white/5 mt-4 pt-6">
+                        Não. Temos um módulo inteiro focado em estratégias para vender todos os dias sem precisar gravar stories ou se expor.
+                    </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group bg-[#0a0a0a] rounded-xl border border-white/10 open:border-vc-gold/40 transition-colors duration-300 hover:border-white/20">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none p-8 text-white font-headline-md text-[22px]">
+<span class="flex items-center gap-4"><span class="w-2 h-2 bg-vc-gold rounded-full opacity-50 group-open:opacity-100 transition-opacity"></span> Quanto preciso investir em anúncios?</span>
+<span class="transition-transform duration-300 group-open:rotate-180 text-vc-gold/70 group-open:text-vc-gold">
+<span class="material-symbols-outlined text-3xl">expand_more</span>
+</span>
+</summary>
+<div class="text-white/70 mt-2 p-8 pt-0 font-body-lg text-body-lg pl-14 leading-relaxed border-t border-white/5 mt-4 pt-6">
+                        Você pode começar com apenas R$ 6,00 por dia e escalar os investimentos conforme as vendas começarem a acontecer.
+                    </div>
+</details>
+</div>
+</section>
+<!-- 9. Pre-Footer / Final CTA -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter border-t border-white/5 bg-[#050505] relative overflow-hidden">
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-vc-magenta/5 blur-[150px] rounded-t-full pointer-events-none"></div>
+<div class="max-w-3xl mx-auto text-center relative z-10">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-[36px] md:text-[48px] leading-tight text-white mb-12">
+                    🚀 Se você quer transformar suas redes sociais em uma máquina de vendas, esse é o momento.
+                </h2>
+<form class="flex flex-col gap-5 mt-10 bg-[#0a0a0a] p-10 md:p-14 rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="text-left mb-6">
+<p class="font-label-caps text-[16px] tracking-widest text-vc-gold mb-2 font-bold">CADASTRE-SE PARA GARANTIR A OFERTA</p>
+</div>
+<input class="input-premium w-full p-5 rounded-xl text-white font-body-lg text-body-lg placeholder-white/30 focus:ring-1 focus:ring-vc-gold" placeholder="Seu Nome Completo" required="" type="text"/>
+<input class="input-premium w-full p-5 rounded-xl text-white font-body-lg text-body-lg placeholder-white/30 focus:ring-1 focus:ring-vc-gold" placeholder="Seu melhor E-mail" required="" type="email"/>
+<button class="w-full bg-vc-magenta text-white font-headline-md text-[24px] py-6 px-8 rounded-xl mt-6 hover:bg-vc-magenta-hover transition-all duration-300 glow-magenta font-bold uppercase tracking-wide hover:-translate-y-1" type="submit">
+                        QUERO MINHA VAGA AGORA
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full py-20 bg-black border-t border-white/5 flex flex-col items-center gap-base px-gutter max-w-container-max-width mx-auto relative z-10">
+<div class="font-display-lg text-headline-md text-white/90 mb-8 font-bold">
+            Vendas Conectadas
+        </div>
+<nav class="flex flex-wrap justify-center gap-8 mb-10">
+<a class="text-white/50 hover:text-white transition-all font-body-md text-body-md" href="#">Termos de Uso</a>
+<a class="text-white/50 hover:text-white transition-all font-body-md text-body-md" href="#">Privacidade</a>
+<a class="text-white/50 hover:text-white transition-all font-body-md text-body-md" href="#">Suporte</a>
+</nav>
+<p class="text-white/40 font-body-md text-body-md text-center">
+            © 2024 Vendas Conectadas. Todos os direitos reservados.
+        </p>
+<p class="text-white/30 text-[11px] text-center max-w-3xl mt-6 leading-relaxed">
+            Este site não faz parte do site do Facebook ou do Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial da FACEBOOK, Inc.
+        </p>
+</footer>
+<script>
+        // Simple script to handle smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>

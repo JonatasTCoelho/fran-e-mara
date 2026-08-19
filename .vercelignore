@@ -1,0 +1,9 @@
+# Ignore local build output and dependencies
+dist/
+build/
+node_modules/
+.vite/
+
+# Ignore large media/video files
+*.mp4
+**/*.mp4
