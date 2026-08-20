@@ -197,7 +197,7 @@ function App() {
             <div className="relative z-10 w-full max-w-3xl mx-auto mb-8 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_40px_rgba(212,175,55,0.1)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_60px_rgba(255,0,255,0.15)] border border-white/10 hover:border-vc-magenta/30">
               <iframe 
                 className="w-full aspect-video object-cover bg-black"
-                src="https://www.youtube.com/embed/IMlw_1lqCnU?autoplay=1&mute=1&playsinline=1"
+                src="https://www.youtube.com/embed/8eIuBaCK-aA?autoplay=1&mute=1&playsinline=1"
                 title="Aprenda o Caminho Secreto para o seu Negócio Brilhar no Digital!"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
