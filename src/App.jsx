@@ -103,44 +103,46 @@ function App() {
 
   return (
     <>
-      {/* 1. Top Alert Block */}
-      <div className="alert-bar w-full py-1.5 sm:py-3 px-2 sm:px-gutter text-center z-[60] relative shadow-[0_4px_20px_rgba(255,0,255,0.2)]">
-        <p className="font-label-caps text-[11px] sm:text-[12px] md:text-label-caps text-white font-bold flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap">
-          <span className="material-symbols-outlined text-[15px] sm:text-[18px] shrink-0">warning</span>
-          <span className="md:hidden">Inscrições encerram em:</span>
-          <span className="hidden md:inline">ÚLTIMA CHANCE: As inscrições com desconto encerram em:</span>
-          <span className="bg-black/40 px-1.5 py-0.5 rounded border border-white/20 font-mono text-[13px] sm:text-[16px] text-vc-gold tracking-widest tabular-nums drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] shrink-0">
-            {formatTime(timeLeft)}
-          </span>
-        </p>
-      </div>
+      {/* Top Header Sticky Container */}
+      <header className="sticky top-0 z-50 w-full flex flex-col shadow-xl">
+        {/* 1. Top Alert Block */}
+        <div className="alert-bar w-full py-2 px-3 text-center relative z-10 shadow-[0_4px_20px_rgba(255,0,255,0.2)]">
+          <p className="font-label-caps text-[11px] sm:text-[12px] md:text-label-caps text-white font-bold flex items-center justify-center gap-1.5 sm:gap-2">
+            <span className="material-symbols-outlined text-[15px] sm:text-[18px] shrink-0">warning</span>
+            <span>ÚLTIMA CHANCE: As inscrições com desconto encerram em:</span>
+            <span className="bg-black/40 px-2 py-0.5 rounded border border-white/20 font-mono text-[12px] sm:text-[16px] text-vc-gold tracking-widest tabular-nums shrink-0">
+              {formatTime(timeLeft)}
+            </span>
+          </p>
+        </div>
 
-      {/* TopAppBar */}
-      <header className="absolute top-0 w-full z-50 glass-nav border-b border-white/5 mt-[36px] sm:mt-[44px]">
-        <div className="flex justify-between items-center px-gutter py-3 sm:py-5 max-w-container-max-width mx-auto">
-          <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="flex items-center group cursor-pointer">
-            <img 
-              src="/logo.png" 
-              alt="Vendas Conectadas com Mara Camargo e Fran Martins" 
-              className="h-8 sm:h-11 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-          </a>
-          <nav className="hidden md:flex gap-10 items-center">
-            <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#metodo">O Método</a>
-            <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#resultados">Resultados</a>
-            <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#oferta">Oferta</a>
-            <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#faq">FAQ</a>
-          </nav>
-          <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="hidden md:block bg-vc-magenta text-white font-label-caps text-label-caps py-3 px-8 rounded-sm hover:bg-vc-magenta-hover transition-all duration-300 glow-magenta font-bold cursor-pointer active:scale-95 uppercase tracking-wider text-center">
-            Matricular Agora
-          </a>
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-            aria-label="Menu" 
-            className="md:hidden text-white/70 hover:text-white transition-colors"
-          >
-            <span className="material-symbols-outlined text-3xl">menu</span>
-          </button>
+        {/* TopAppBar */}
+        <div className="w-full glass-nav border-b border-white/5">
+          <div className="flex justify-between items-center px-4 sm:px-gutter py-3 sm:py-4 max-w-container-max-width mx-auto">
+            <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="flex items-center group cursor-pointer">
+              <img 
+                src="/logo.png" 
+                alt="Vendas Conectadas com Mara Camargo e Fran Martins" 
+                className="h-8 sm:h-11 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </a>
+            <nav className="hidden md:flex gap-10 items-center">
+              <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#metodo">O Método</a>
+              <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#resultados">Resultados</a>
+              <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#oferta">Oferta</a>
+              <a className="text-white/70 hover:text-vc-gold transition-colors font-label-caps text-label-caps cursor-pointer active:scale-95 tracking-wider" href="#faq">FAQ</a>
+            </nav>
+            <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="hidden md:block bg-vc-magenta text-white font-label-caps text-label-caps py-3 px-8 rounded-sm hover:bg-vc-magenta-hover transition-all duration-300 glow-magenta font-bold cursor-pointer active:scale-95 uppercase tracking-wider text-center">
+              Matricular Agora
+            </a>
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              aria-label="Menu" 
+              className="md:hidden text-white/70 hover:text-white transition-colors"
+            >
+              <span className="material-symbols-outlined text-3xl">menu</span>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -173,24 +175,23 @@ function App() {
       )}
 
       <div className="w-full overflow-x-hidden">
-        <main className="flex-grow pt-10 sm:pt-16 md:pt-20">
+        <main className="flex-grow">
           {/* 2. Hero Section */}
-          <section className="py-2 sm:py-6 md:py-16 px-gutter max-w-container-max-width mx-auto flex flex-col items-center text-center relative mt-0 md:mt-4">
+          <section className="py-6 sm:py-10 md:py-16 px-4 sm:px-gutter max-w-container-max-width mx-auto flex flex-col items-center text-center relative">
             {/* Decorative Grid & Glow */}
             <div className="absolute inset-0 bg-grid pointer-events-none opacity-50 z-0"></div>
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-vc-magenta/15 blur-[120px] rounded-full pointer-events-none z-0"></div>
             <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-vc-gold/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
-            <div className="relative z-10 inline-flex items-center gap-2.5 px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full border border-vc-magenta/40 bg-vc-magenta/5 backdrop-blur-sm mb-3 sm:mb-6 md:mb-10 shadow-[0_0_15px_rgba(255,0,255,0.1)]">
+            <div className="relative z-10 inline-flex items-center gap-2.5 px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full border border-vc-magenta/40 bg-vc-magenta/5 backdrop-blur-sm mb-4 sm:mb-6 md:mb-10 shadow-[0_0_15px_rgba(255,0,255,0.1)]">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-vc-magenta animate-pulse shadow-[0_0_10px_#FF00FF]"></span>
               <span className="font-label-caps text-[11px] sm:text-label-caps text-vc-magenta tracking-widest font-bold">MÉTODO VALIDADO</span>
             </div>
-            <h1 className="relative z-10 font-display-lg text-[34px] sm:text-[42px] md:text-display-lg text-white mb-4 sm:mb-6 max-w-[1000px] leading-[1.15] md:leading-[1.1]">
+            <h1 className="relative z-10 font-display-lg text-[26px] sm:text-[36px] md:text-display-lg text-white mb-4 sm:mb-6 max-w-[1000px] leading-[1.2] md:leading-[1.1]">
               Conquiste novos clientes todos os dias com uma estratégia digital{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-vc-gold via-[#FFF8D6] to-vc-gold drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]">simples e lucrativa</span>.
             </h1>
-            <p className="relative z-10 font-body-lg text-sm sm:text-base md:text-body-lg text-white/70 mb-8 max-w-3xl leading-relaxed">
-              <span className="md:hidden">Domine o método para atrair os clientes certos e vender todos os dias no digital.</span>
-              <span className="hidden md:inline">Você não precisa viver criando conteúdo para vender no digital.<br className="hidden md:block"/>Basta dominar o método para atrair as pessoas certas e fechar vendas todos os dias.</span>
+            <p className="relative z-10 font-body-lg text-sm sm:text-base md:text-body-lg text-white/70 mb-6 sm:mb-8 max-w-3xl leading-relaxed">
+              Você não precisa viver criando conteúdo para vender no digital.<br className="hidden md:block"/> Basta dominar o método para atrair as pessoas certas e fechar vendas todos os dias.
             </p>
             
 
@@ -208,7 +209,7 @@ function App() {
             </div>
             {showContent && (
               <div className="animate-fade-in-up w-full flex flex-col items-center">
-                <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-block text-center w-full md:w-auto bg-vc-magenta text-white font-headline-md py-6 px-14 rounded-lg transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_30px_rgba(255,0,255,0.3)] hover:-translate-y-1 uppercase tracking-wide">
+                <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-block text-center w-full md:w-auto bg-vc-magenta text-white font-headline-md py-5 sm:py-6 px-10 sm:px-14 rounded-lg transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_30px_rgba(255,0,255,0.3)] hover:-translate-y-1 uppercase tracking-wide text-base sm:text-lg">
                   QUERO ACESSAR O MÉTODO
                 </a>
                 <div className="relative z-10 mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-8 opacity-60">
@@ -223,56 +224,49 @@ function App() {
             <div className="animate-fade-in-up w-full" style={{ animationDelay: '0.2s' }}>
 
               {/* 2. IDENTIFICAÇÃO */}
-              <section className="py-8 md:py-24 bg-gradient-to-b from-black via-[#050505] to-black relative border-y border-white/5">
-                <div className="px-gutter max-w-container-max-width mx-auto relative z-10">
+              <section className="py-12 md:py-24 bg-gradient-to-b from-black via-[#050505] to-black relative border-y border-white/5">
+                <div className="px-4 sm:px-gutter max-w-container-max-width mx-auto relative z-10">
                   <div className="text-center mb-8 md:mb-12 reveal">
-                    <h2 className="font-display-lg-mobile md:font-display-lg text-[22px] sm:text-[28px] md:text-[40px] text-white mb-4 md:mb-6">
-                      <span className="md:hidden">Você se identifica com essas situações?</span>
-                      <span className="hidden md:inline">Você se identifica com alguma dessas situações?</span>
+                    <h2 className="font-headline-lg text-[22px] sm:text-[28px] md:text-[40px] text-white mb-4 md:mb-6">
+                      Você se identifica com alguma dessas situações?
                     </h2>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3.5 md:gap-y-8 gap-x-10 mb-8 md:mb-12 reveal reveal-delay-1 max-w-5xl mx-auto">
-                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 md:bg-transparent p-3 md:p-0 rounded-xl md:rounded-none">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12 reveal reveal-delay-1 max-w-5xl mx-auto">
+                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-4 md:p-0 rounded-xl md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-xl sm:text-2xl shrink-0 mt-0.5">error</span>
-                      <p className="text-white/80 font-body-md text-xs sm:text-base leading-relaxed">
-                        <span className="md:hidden">Sabe que poderia vender muito mais no digital.</span>
-                        <span className="hidden md:inline">Você sabe que poderia vender muito mais utilizando o digital.</span>
+                      <p className="text-white/80 font-body-md text-sm sm:text-base leading-relaxed">
+                        Você sabe que poderia vender muito mais utilizando o digital.
                       </p>
                     </div>
-                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 md:bg-transparent p-3 md:p-0 rounded-xl md:rounded-none">
+                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-4 md:p-0 rounded-xl md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-xl sm:text-2xl shrink-0 mt-0.5">error</span>
-                      <p className="text-white/80 font-body-md text-xs sm:text-base leading-relaxed">
-                        <span className="md:hidden">Receio de investir em anúncios e perder dinheiro.</span>
-                        <span className="hidden md:inline">Tem receio de investir em anúncios e perder dinheiro.</span>
+                      <p className="text-white/80 font-body-md text-sm sm:text-base leading-relaxed">
+                        Tem receio de investir em anúncios e perder dinheiro.
                       </p>
                     </div>
-                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 md:bg-transparent p-3 md:p-0 rounded-xl md:rounded-none">
+                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-4 md:p-0 rounded-xl md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-xl sm:text-2xl shrink-0 mt-0.5">error</span>
-                      <p className="text-white/80 font-body-md text-xs sm:text-base leading-relaxed">
-                        <span className="md:hidden">Sem saber exatamente por onde começar.</span>
-                        <span className="hidden md:inline">Não sabe exatamente por onde começar.</span>
+                      <p className="text-white/80 font-body-md text-sm sm:text-base leading-relaxed">
+                        Não sabe exatamente por onde começar.
                       </p>
                     </div>
-                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 md:bg-transparent p-3 md:p-0 rounded-xl md:rounded-none">
+                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-4 md:p-0 rounded-xl md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-xl sm:text-2xl shrink-0 mt-0.5">error</span>
-                      <p className="text-white/80 font-body-md text-xs sm:text-base leading-relaxed">
-                        <span className="md:hidden">Atrai curiosos, mas poucos realmente compram.</span>
-                        <span className="hidden md:inline">Atrai pessoas interessadas, mas poucas realmente compram.</span>
+                      <p className="text-white/80 font-body-md text-sm sm:text-base leading-relaxed">
+                        Atrai pessoas interessadas, mas poucas realmente compram.
                       </p>
                     </div>
-                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 md:bg-transparent p-3 md:p-0 rounded-xl md:rounded-none">
+                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-4 md:p-0 rounded-xl md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-xl sm:text-2xl shrink-0 mt-0.5">error</span>
-                      <p className="text-white/80 font-body-md text-xs sm:text-base leading-relaxed">
-                        <span className="md:hidden">Dificuldade de fechar vendas no WhatsApp/Direct.</span>
-                        <span className="hidden md:inline">Recebe mensagens e sente dificuldade em conduzir a conversa até a venda.</span>
+                      <p className="text-white/80 font-body-md text-sm sm:text-base leading-relaxed">
+                        Recebe mensagens e sente dificuldade em conduzir a conversa até a venda.
                       </p>
                     </div>
-                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 md:bg-transparent p-3 md:p-0 rounded-xl md:rounded-none">
+                    <div className="flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-4 md:p-0 rounded-xl md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-xl sm:text-2xl shrink-0 mt-0.5">error</span>
-                      <p className="text-white/80 font-body-md text-xs sm:text-base leading-relaxed">
-                        <span className="md:hidden">Vê concorrentes crescendo e fica para trás.</span>
-                        <span className="hidden md:inline">Vê concorrentes crescendo enquanto acredita que seu negócio poderia estar muito mais à frente.</span>
+                      <p className="text-white/80 font-body-md text-sm sm:text-base leading-relaxed">
+                        Vê concorrentes crescendo enquanto acredita que seu negócio poderia estar muito mais à frente.
                       </p>
                     </div>
                   </div>
