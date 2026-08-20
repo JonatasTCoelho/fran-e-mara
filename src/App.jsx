@@ -104,24 +104,25 @@ function App() {
   return (
     <>
       {/* 1. Top Alert Block */}
-      <div className="alert-bar w-full py-3 px-gutter text-center z-[60] relative shadow-[0_4px_20px_rgba(255,0,255,0.2)]">
-        <p className="font-label-caps text-[12px] md:text-label-caps text-white font-bold flex flex-wrap items-center justify-center gap-2">
-          <span className="material-symbols-outlined text-[18px]">warning</span>
-          <span>ÚLTIMA CHANCE: As inscrições com desconto encerram em:</span>
-          <span className="bg-black/40 px-2 py-0.5 rounded border border-white/20 font-mono text-[16px] text-vc-gold tracking-widest tabular-nums drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">
+      <div className="alert-bar w-full py-1.5 sm:py-3 px-2 sm:px-gutter text-center z-[60] relative shadow-[0_4px_20px_rgba(255,0,255,0.2)]">
+        <p className="font-label-caps text-[11px] sm:text-[12px] md:text-label-caps text-white font-bold flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap">
+          <span className="material-symbols-outlined text-[15px] sm:text-[18px] shrink-0">warning</span>
+          <span className="md:hidden">Inscrições encerram em:</span>
+          <span className="hidden md:inline">ÚLTIMA CHANCE: As inscrições com desconto encerram em:</span>
+          <span className="bg-black/40 px-1.5 py-0.5 rounded border border-white/20 font-mono text-[13px] sm:text-[16px] text-vc-gold tracking-widest tabular-nums drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] shrink-0">
             {formatTime(timeLeft)}
           </span>
         </p>
       </div>
 
       {/* TopAppBar */}
-      <header className="absolute top-0 w-full z-50 glass-nav border-b border-white/5 mt-[44px]">
-        <div className="flex justify-between items-center px-gutter py-5 max-w-container-max-width mx-auto">
+      <header className="absolute top-0 w-full z-50 glass-nav border-b border-white/5 mt-[36px] sm:mt-[44px]">
+        <div className="flex justify-between items-center px-gutter py-3 sm:py-5 max-w-container-max-width mx-auto">
           <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="flex items-center group cursor-pointer">
             <img 
               src="/logo.png" 
               alt="Vendas Conectadas com Mara Camargo e Fran Martins" 
-              className="h-9 sm:h-11 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-8 sm:h-11 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
           <nav className="hidden md:flex gap-10 items-center">
@@ -172,18 +173,18 @@ function App() {
       )}
 
       <div className="w-full overflow-x-hidden">
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-10 sm:pt-16 md:pt-20">
           {/* 2. Hero Section */}
-          <section className="py-10 md:py-16 px-gutter max-w-container-max-width mx-auto flex flex-col items-center text-center relative mt-4">
+          <section className="py-2 sm:py-6 md:py-16 px-gutter max-w-container-max-width mx-auto flex flex-col items-center text-center relative mt-0 md:mt-4">
             {/* Decorative Grid & Glow */}
             <div className="absolute inset-0 bg-grid pointer-events-none opacity-50 z-0"></div>
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-vc-magenta/15 blur-[120px] rounded-full pointer-events-none z-0"></div>
             <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-vc-gold/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
-            <div className="relative z-10 inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-vc-magenta/40 bg-vc-magenta/5 backdrop-blur-sm mb-10 shadow-[0_0_15px_rgba(255,0,255,0.1)]">
-              <span className="w-2.5 h-2.5 rounded-full bg-vc-magenta animate-pulse shadow-[0_0_10px_#FF00FF]"></span>
-              <span className="font-label-caps text-label-caps text-vc-magenta tracking-widest font-bold">MÉTODO VALIDADO</span>
+            <div className="relative z-10 inline-flex items-center gap-2.5 px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full border border-vc-magenta/40 bg-vc-magenta/5 backdrop-blur-sm mb-3 sm:mb-6 md:mb-10 shadow-[0_0_15px_rgba(255,0,255,0.1)]">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-vc-magenta animate-pulse shadow-[0_0_10px_#FF00FF]"></span>
+              <span className="font-label-caps text-[11px] sm:text-label-caps text-vc-magenta tracking-widest font-bold">MÉTODO VALIDADO</span>
             </div>
-            <h1 className="relative z-10 font-display-lg text-[24px] sm:text-[32px] md:text-display-lg text-white mb-4 sm:mb-6 max-w-[1000px] leading-[1.25] md:leading-[1.1]">
+            <h1 className="relative z-10 font-display-lg text-[22px] sm:text-[32px] md:text-display-lg text-white mb-3 sm:mb-6 max-w-[1000px] leading-[1.2] md:leading-[1.1]">
               Conquiste novos clientes todos os dias com uma estratégia digital{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-vc-gold via-[#FFF8D6] to-vc-gold drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]">simples e lucrativa</span>.
             </h1>
