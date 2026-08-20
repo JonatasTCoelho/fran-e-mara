@@ -183,7 +183,7 @@ function App() {
               <span className="w-2.5 h-2.5 rounded-full bg-vc-magenta animate-pulse shadow-[0_0_10px_#FF00FF]"></span>
               <span className="font-label-caps text-label-caps text-vc-magenta tracking-widest font-bold">MÉTODO VALIDADO</span>
             </div>
-            <h1 className="relative z-10 font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 max-w-[1000px] leading-[1.1]">
+            <h1 className="relative z-10 font-display-lg text-[24px] sm:text-[32px] md:text-display-lg text-white mb-4 sm:mb-6 max-w-[1000px] leading-[1.25] md:leading-[1.1]">
               Conquiste novos clientes todos os dias com uma estratégia digital{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-vc-gold via-[#FFF8D6] to-vc-gold drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]">simples e lucrativa</span>.
             </h1>
