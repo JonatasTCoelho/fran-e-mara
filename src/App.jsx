@@ -184,7 +184,7 @@ function App() {
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-vc-magenta animate-pulse shadow-[0_0_10px_#FF00FF]"></span>
               <span className="font-label-caps text-[11px] sm:text-label-caps text-vc-magenta tracking-widest font-bold">MÉTODO VALIDADO</span>
             </div>
-            <h1 className="relative z-10 font-display-lg text-[22px] sm:text-[32px] md:text-display-lg text-white mb-3 sm:mb-6 max-w-[1000px] leading-[1.2] md:leading-[1.1]">
+            <h1 className="relative z-10 font-display-lg text-[34px] sm:text-[42px] md:text-display-lg text-white mb-4 sm:mb-6 max-w-[1000px] leading-[1.15] md:leading-[1.1]">
               Conquiste novos clientes todos os dias com uma estratégia digital{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-vc-gold via-[#FFF8D6] to-vc-gold drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]">simples e lucrativa</span>.
             </h1>
