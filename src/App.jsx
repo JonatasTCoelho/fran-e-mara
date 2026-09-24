@@ -212,7 +212,7 @@ function App() {
                 <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-block text-center w-full md:w-auto bg-vc-magenta text-white font-headline-md py-4 sm:py-6 px-8 sm:px-14 rounded-lg transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_30px_rgba(255,0,255,0.3)] hover:-translate-y-1 uppercase tracking-wide text-[15px] sm:text-lg">
                   QUERO ACESSAR O MÉTODO
                 </a>
-                <div className="relative z-10 mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-8 opacity-60">
+                <div className="relative z-10 mt-4 sm:mt-6 hidden sm:flex flex-wrap items-center justify-center gap-4 sm:gap-8 opacity-60">
                   <span className="flex items-center gap-1.5 sm:gap-2 font-label-caps text-[10px] sm:text-[13px] tracking-wider"><span className="material-symbols-outlined text-[14px] sm:text-[18px]">lock</span> PAGAMENTO SEGURO</span>
                   <span className="flex items-center gap-1.5 sm:gap-2 font-label-caps text-[10px] sm:text-[13px] tracking-wider"><span className="material-symbols-outlined text-[14px] sm:text-[18px]">update</span> ACESSO IMEDIATO</span>
                 </div>
@@ -224,50 +224,50 @@ function App() {
             <div className="animate-fade-in-up w-full" style={{ animationDelay: '0.2s' }}>
 
               {/* 2. IDENTIFICAÇÃO */}
-              <section className="py-10 md:py-24 bg-gradient-to-b from-black via-[#050505] to-black relative border-y border-white/5">
+              <section className="py-8 md:py-24 bg-gradient-to-b from-black via-[#050505] to-black relative border-y border-white/5">
                 <div className="px-4 sm:px-gutter max-w-container-max-width mx-auto relative z-10">
-                  <div className="text-center mb-6 md:mb-12 reveal">
+                  <div className="text-center mb-5 md:mb-12 reveal">
                     <h2 className="font-headline-lg text-[20px] sm:text-[28px] md:text-[40px] text-white mb-3 md:mb-6 leading-tight">
-                      Você se identifica com alguma dessas situações?
+                      <span className="md:hidden">Você se identifica?</span>
+                      <span className="hidden md:inline">Você se identifica com alguma dessas situações?</span>
                     </h2>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-8 mb-6 md:mb-12 reveal reveal-delay-1 max-w-5xl mx-auto">
-                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-3 md:p-0 rounded-lg md:rounded-none">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 mb-5 md:mb-12 reveal reveal-delay-1 max-w-5xl mx-auto">
+                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-2.5 md:p-0 rounded-lg md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-lg sm:text-2xl shrink-0 mt-0.5">error</span>
                       <p className="text-white/80 font-body-md text-[13px] sm:text-base leading-relaxed">
                         Você sabe que poderia vender muito mais utilizando o digital.
                       </p>
                     </div>
-                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-3 md:p-0 rounded-lg md:rounded-none">
+                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-2.5 md:p-0 rounded-lg md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-lg sm:text-2xl shrink-0 mt-0.5">error</span>
                       <p className="text-white/80 font-body-md text-[13px] sm:text-base leading-relaxed">
                         Tem receio de investir em anúncios e perder dinheiro.
                       </p>
                     </div>
-                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-3 md:p-0 rounded-lg md:rounded-none">
+                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-2.5 md:p-0 rounded-lg md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-lg sm:text-2xl shrink-0 mt-0.5">error</span>
                       <p className="text-white/80 font-body-md text-[13px] sm:text-base leading-relaxed">
                         Não sabe exatamente por onde começar.
                       </p>
                     </div>
-                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-3 md:p-0 rounded-lg md:rounded-none">
+                    <div className="hidden md:flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-2.5 md:p-0 rounded-lg md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-lg sm:text-2xl shrink-0 mt-0.5">error</span>
                       <p className="text-white/80 font-body-md text-[13px] sm:text-base leading-relaxed">
                         Atrai pessoas interessadas, mas poucas realmente compram.
                       </p>
                     </div>
-                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-3 md:p-0 rounded-lg md:rounded-none">
+                    <div className="hidden md:flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-2.5 md:p-0 rounded-lg md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-lg sm:text-2xl shrink-0 mt-0.5">error</span>
                       <p className="text-white/80 font-body-md text-[13px] sm:text-base leading-relaxed">
                         Dificuldade em conduzir a conversa até a venda.
                       </p>
                     </div>
-                    <div className="flex gap-3 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-3 md:p-0 rounded-lg md:rounded-none">
+                    <div className="hidden md:flex gap-3 sm:gap-4 items-start text-left bg-white/5 border border-white/10 md:border-transparent p-2.5 md:p-0 rounded-lg md:rounded-none">
                       <span className="material-symbols-outlined text-red-500 text-lg sm:text-2xl shrink-0 mt-0.5">error</span>
                       <p className="text-white/80 font-body-md text-[13px] sm:text-base leading-relaxed">
-                        <span className="md:hidden">Concorrentes crescendo enquanto seu negócio fica parado.</span>
-                        <span className="hidden md:inline">Vê concorrentes crescendo enquanto acredita que seu negócio poderia estar muito mais à frente.</span>
+                        Vê concorrentes crescendo enquanto acredita que seu negócio poderia estar muito mais à frente.
                       </p>
                     </div>
                   </div>
@@ -341,7 +341,7 @@ function App() {
                   </div>
 
                   {/* CTA 1: Depois do Herói/Solução */}
-                  <div className="flex justify-center mt-2 sm:mt-6 reveal reveal-delay-2">
+                  <div className="hidden md:flex justify-center mt-2 sm:mt-6 reveal reveal-delay-2">
                     <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-block text-center w-full md:w-auto bg-vc-magenta text-white font-headline-md py-3.5 px-8 rounded-lg transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_30px_rgba(255,0,255,0.3)] hover:-translate-y-0.5 uppercase tracking-wide text-[14px] md:text-lg">
                       QUERO ATRAIR MAIS CLIENTES
                     </a>
@@ -447,7 +447,7 @@ function App() {
                   </div>
 
                   {/* CTA 2: Depois dos Pilares/O que vai aprender */}
-                  <div className="flex justify-center mt-6 sm:mt-10 reveal reveal-delay-2">
+                  <div className="hidden md:flex justify-center mt-6 sm:mt-10 reveal reveal-delay-2">
                     <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-block text-center w-full md:w-auto bg-vc-magenta text-white font-headline-md py-3.5 sm:py-4 px-8 sm:px-10 rounded-lg transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_30px_rgba(255,0,255,0.3)] hover:-translate-y-0.5 uppercase tracking-wide text-[14px] md:text-lg">
                       QUERO DOMINAR O MÉTODO
                     </a>
@@ -456,33 +456,30 @@ function App() {
                 </div>
               </section>
               {/* 7. POR QUE ESSE MÉTODO FUNCIONA */}
-              <section className="py-10 md:py-24 bg-gradient-to-b from-black via-[#0a0a0a] to-black relative border-b border-white/5">
+              <section className="py-8 md:py-24 bg-gradient-to-b from-black via-[#0a0a0a] to-black relative border-b border-white/5">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-vc-gold/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
-                <div className="px-4 sm:px-gutter max-w-container-max-width mx-auto relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-20">
+                <div className="px-4 sm:px-gutter max-w-container-max-width mx-auto relative z-10 flex flex-col md:flex-row items-center gap-5 md:gap-20">
                   <div className="flex-1 text-left reveal">
-                    <h2 className="font-headline-lg text-[20px] sm:text-[28px] md:text-headline-lg text-white mb-3 sm:mb-6 leading-[1.2]">
-                      <span className="md:hidden">Criado para ser aplicado na prática.</span>
+                    <h2 className="font-headline-lg text-[20px] sm:text-[28px] md:text-headline-lg text-white mb-2 sm:mb-6 leading-[1.2]">
+                      <span className="md:hidden">Criado para aplicar na prática.</span>
                       <span className="hidden md:inline">Um curso criado para ser aplicado. Não para ficar esquecido.</span>
                     </h2>
-                    <div className="font-body-lg text-[13px] sm:text-base md:text-body-lg text-white/70 leading-relaxed mb-3 sm:mb-6">
-                      <p className="md:hidden mb-2">Sem teoria chata. Cada aula termina com uma ação prática para aplicar direto no seu negócio.</p>
-                      <div className="hidden md:block space-y-4">
-                        <p>Nada de horas de teoria.</p>
-                        <p>Nada de conteúdos feitos apenas para aumentar carga horária.</p>
-                        <p>Cada aula termina com uma ação prática para ser aplicada imediatamente no seu negócio.</p>
-                      </div>
-                      <p className="text-vc-gold font-bold text-[15px] sm:text-lg md:text-xl mt-2 sm:mt-4">Você aprende. Aplica. Evolui.</p>
+                    <div className="font-body-lg text-[13px] sm:text-base md:text-body-lg text-white/70 leading-relaxed mb-2 sm:mb-6">
+                      <p className="hidden md:block">Nada de horas de teoria.</p>
+                      <p className="hidden md:block">Nada de conteúdos feitos apenas para aumentar carga horária.</p>
+                      <p className="hidden md:block">Cada aula termina com uma ação prática para ser aplicada imediatamente no seu negócio.</p>
+                      <p className="text-vc-gold font-bold text-[15px] sm:text-lg md:text-xl mt-1 sm:mt-4">Você aprende. Aplica. Evolui.</p>
                     </div>
                   </div>
                   
-                  <div className="flex-1 w-full grid grid-cols-2 gap-x-3 gap-y-2 sm:gap-y-4 reveal reveal-delay-1">
+                  <div className="flex-1 w-full grid grid-cols-3 md:grid-cols-2 gap-x-2 gap-y-2 sm:gap-x-3 sm:gap-y-4 reveal reveal-delay-1">
                     {[
                       'Aplicação imediata', 'Método validado', 'Linguagem simples', 
                       'Estratégias atuais', 'Sem enrolação', 'Foco em resultados'
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2 sm:gap-3 py-0.5 text-left">
-                        <span className="material-symbols-outlined text-vc-gold text-base sm:text-2xl shrink-0">check_circle</span>
-                        <span className="text-white/80 font-headline-md text-[12px] sm:text-base">{item}</span>
+                      <div key={idx} className="flex items-center gap-1.5 sm:gap-3 py-0.5 text-left">
+                        <span className="material-symbols-outlined text-vc-gold text-sm sm:text-2xl shrink-0">check_circle</span>
+                        <span className="text-white/80 font-headline-md text-[11px] sm:text-base">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -555,14 +552,14 @@ function App() {
 
                   </div>
                   
-                  <div className="text-center bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-3.5 sm:p-8 backdrop-blur-sm reveal reveal-delay-1">
+                  <div className="hidden md:block text-center bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-3.5 sm:p-8 backdrop-blur-sm reveal reveal-delay-1">
                     <p className="font-headline-md text-[13px] sm:text-xl md:text-2xl text-white/90 italic">
                       &quot;Juntas criamos um método que conecta marketing e vendas de forma prática.&quot;
                     </p>
                   </div>
 
                   {/* CTA 3: Depois da seção de Quem Somos */}
-                  <div className="flex justify-center mt-6 sm:mt-8 reveal reveal-delay-2">
+                  <div className="hidden md:flex justify-center mt-6 sm:mt-8 reveal reveal-delay-2">
                     <a href="https://pay.kiwify.com.br/p3v2VJS" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-block text-center w-full md:w-auto bg-vc-magenta text-white font-headline-md py-3.5 sm:py-4 px-8 sm:px-10 rounded-lg transition-all duration-300 glow-magenta-hover font-bold shadow-[0_10px_30px_rgba(255,0,255,0.3)] hover:-translate-y-0.5 uppercase tracking-wide text-[14px] sm:text-base md:text-lg">
                       QUERO APRENDER COM ELAS
                     </a>
@@ -615,7 +612,7 @@ function App() {
 
                 </div>
                 
-                <div className="mt-5 sm:mt-8 flex flex-wrap justify-center gap-2 sm:gap-3 opacity-60">
+                <div className="mt-5 sm:mt-8 hidden sm:flex flex-wrap justify-center gap-2 sm:gap-3 opacity-60">
                   {['Consultorias', 'Mentorias', 'Resultados', 'Treinamentos'].map((tag, idx) => (
                     <span key={idx} className="bg-white/5 border border-white/10 px-2.5 py-1 sm:px-4 sm:py-2 rounded-full font-label-caps text-[9px] sm:text-xs tracking-widest uppercase">{tag}</span>
                   ))}
@@ -623,11 +620,11 @@ function App() {
               </section>
 
               {/* 6. Offer Section */}
-              <section className="py-8 md:py-12 px-4 sm:px-gutter relative" id="oferta">
+              <section className="py-6 md:py-12 px-4 sm:px-gutter relative" id="oferta">
                 <div className="absolute inset-0 bg-vc-magenta/5 pointer-events-none z-0"></div>
                 
                 <div className="max-w-5xl mx-auto flex flex-col items-center">
-                  <div className="inline-flex items-center gap-2 bg-vc-gold/20 border border-vc-gold/40 px-3 py-1 rounded-full mb-3 reveal">
+                  <div className="hidden sm:inline-flex items-center gap-2 bg-vc-gold/20 border border-vc-gold/40 px-3 py-1 rounded-full mb-3 reveal">
                     <span className="material-symbols-outlined text-[14px] sm:text-[15px] text-vc-gold">star</span>
                     <span className="font-label-caps text-[10px] sm:text-xs text-vc-gold font-bold">A MELHOR OFERTA</span>
                   </div>
@@ -657,7 +654,7 @@ function App() {
                         'Curso completo', 'Atualizações inclusas', 'Materiais complementares',
                         'Checklists práticos', 'Bônus exclusivos', 'Certificado de conclusão'
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-1.5 sm:gap-2.5">
+                        <div key={idx} className={`flex items-center gap-1.5 sm:gap-2.5${idx >= 4 ? ' hidden sm:flex' : ''}`}>
                           <span className="material-symbols-outlined text-vc-gold text-sm sm:text-lg shrink-0">check_circle</span>
                           <span className="text-white/90 font-body-md text-[11px] sm:text-[14px]">{item}</span>
                         </div>
@@ -696,7 +693,7 @@ function App() {
               <section className="pt-6 md:pt-12 pb-10 md:pb-20 px-4 sm:px-gutter max-w-4xl mx-auto relative border-b border-white/5" id="faq">
                 <div className="text-center mb-5 sm:mb-8 relative z-10 reveal">
                   <h2 className="font-headline-lg text-[20px] sm:text-[32px] md:text-[40px] text-white mb-1 leading-tight">Perguntas Frequentes</h2>
-                  <p className="font-body-lg text-white/60 text-[12px] sm:text-base md:text-lg max-w-xl mx-auto">
+                  <p className="font-body-lg text-white/60 text-[12px] sm:text-base md:text-lg max-w-xl mx-auto hidden sm:block">
                     Tire suas dúvidas sobre o Método Vendas Conectadas.
                   </p>
                 </div>
@@ -762,7 +759,7 @@ function App() {
                     </button>
                   </form>
 
-                  <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6 opacity-60">
+                  <div className="mt-4 sm:mt-6 hidden sm:flex flex-wrap items-center justify-center gap-3 sm:gap-6 opacity-60">
                     <span className="flex items-center gap-1.5 font-label-caps text-[10px] sm:text-xs text-white/80 tracking-wider"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">lock</span> PAGAMENTO SEGURO</span>
                     <span className="flex items-center gap-1.5 font-label-caps text-[10px] sm:text-xs text-white/80 tracking-wider"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">verified</span> ACESSO IMEDIATO</span>
                   </div>
@@ -786,7 +783,7 @@ function App() {
             <nav className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-10">
               <a className="text-white/50 hover:text-white transition-all font-body-md text-[12px] sm:text-body-md" href="/politica-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
               <a className="text-white/50 hover:text-white transition-all font-body-md text-[12px] sm:text-body-md" href="/termos-de-uso.html" target="_blank" rel="noopener noreferrer">Termos de Uso</a>
-              <a className="text-white/50 hover:text-white transition-all font-body-md text-[12px] sm:text-body-md" href="https://www.instagram.com/fran.gestora/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a className="text-white/50 hover:text-white transition-all font-body-md text-[12px] sm:text-body-md" href="https://www.instagram.com/vendas_conectadas?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a className="text-white/50 hover:text-white transition-all font-body-md text-[12px] sm:text-body-md" href="https://wa.me/5519999701829?text=Oi!%20Estou%20na%20página%20do%20Vendas%20Conectadas%20e%20tenho%20uma%20dúvida." target="_blank" rel="noopener noreferrer">Suporte</a>
             </nav>
             <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-center">
